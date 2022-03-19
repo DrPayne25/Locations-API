@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Location
-from .serializer import LocationSerializer
+from .models import Place
+from .serializer import PlaceSerializer
+from .permissions import IsOwnerOrReadOnly
 
-class LocationList(generics.ListCreateAPIView):
-  queryset = Location.objects.all()
-  serializer_class = LocationSerializer
+class PlaceList(generics.ListCreateAPIView):
+  permission_classes = (IsOwnerOrReadOnly,)
+  queryset = Place.objects.all()
+  serializer_class = PlaceSerializer
 
-class LocationDetail(generics.RetrieveUpdateDestroyAPIView):
-  queryset = Location.objects.all()
-  serializer_class = LocationSerializer
+class PlaceDetail(generics.RetrieveUpdateDestroyAPIView):
+  permission_classes = (IsOwnerOrReadOnly,)
+  queryset = Place.objects.all()
+  serializer_class = PlaceSerializer
 
