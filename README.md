@@ -26,5 +26,15 @@ Finish time: 3
 
 Actual time needed to complete: 3hrs
 
+### Name of feature: Permissions and postgresql
+
+Estimate of time needed to complete: 1hr 
+
+Start time: 1
+
+Finish time: 5?
+
+Actual time needed to complete: 4hrs
+
 ## Credits 
 Roger
